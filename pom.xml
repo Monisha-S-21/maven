@@ -30,6 +30,23 @@
         </dependency>
     </dependencies>
 
+         <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <sonar.projectKey>maven-pro1</sonar.projectKey>
+        <sonar.host.url>http://localhost:9000</sonar.host.url>
+        <sonar.login>${env.SONAR_TOKEN}</sonar.login>
+    </properties>
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>3.9.1.2184</version>
+        </plugin>
+    </plugins>
+</build>
+
     <build>
         <plugins>
             <plugin>
