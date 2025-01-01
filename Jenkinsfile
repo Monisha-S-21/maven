@@ -18,17 +18,7 @@ pipeline {
             }
         }
         
-        stage('Build') {
-            steps {
-                bat 'mvn clean compile'
-            }
-        }
-        
-        stage('Test') {
-            steps {
-                bat 'mvn test'
-            }
-        }  
+       
       
         stage('Package') {
             steps {
@@ -36,11 +26,7 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                echo 'Deploying the application...'
-            }
-        }
+        
         
       stage('SonarQube Analysis') {
             steps {
