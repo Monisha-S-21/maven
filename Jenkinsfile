@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        SONAR_TOKEN = credentials('maven') // Replace with your credentials ID for the SonarQube token
+        SONAR_TOKEN = credentials('maven') 
         JAVA_HOME = 'C:\\Program Files\\Java\\jdk-17'
         PATH = "${JAVA_HOME}\\bin;${env.PATH}"
     }
@@ -46,7 +46,7 @@ pipeline {
         
       stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('sonarqube') { // Ensure this matches your SonarQube configuration
+                withSonarQubeEnv('sonarqube') {
                     bat """
                         mvn clean verify sonar:sonar \
                         -Dsonar.projectKey=maven \
